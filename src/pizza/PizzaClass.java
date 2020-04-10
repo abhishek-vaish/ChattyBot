@@ -20,4 +20,7 @@ public class PizzaClass {
         this.flavour = flavour;
         this.offer = offer;
     }
+
+    public PizzaClass() {
+    }
 }
