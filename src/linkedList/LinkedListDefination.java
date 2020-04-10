@@ -32,6 +32,18 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
         size++;
     }
 
+    private void add(Pizza data, int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            addFirst(data);
+        } else {
+            Node temp = getNode(index);
+            addAfter(data, temp);
+        }
+    }
+
+
     @Override
     public void add(Pizza data) {
 
