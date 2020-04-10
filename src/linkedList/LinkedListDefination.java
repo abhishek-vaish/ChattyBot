@@ -61,6 +61,16 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
         return response;
     }
 
+    private boolean deleteAfter(Node<Pizza> node) {
+        boolean response = false;
+        Node<Pizza> temp = node.getNext();
+        if (temp != null) {
+            size--;
+            response = true;
+        }
+        return response;
+    }
+
     @Override
     public boolean delete(int index) {
         return false;
