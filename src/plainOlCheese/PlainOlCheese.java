@@ -29,4 +29,17 @@ public class PlainOlCheese {
         return pizzaClass.toString();
     }
 
+    public String theBigPepperoniAndMashroom() {
+        PizzaClass pizzaClass = new PizzaClass();
+        pizzaName = "THE BIG PEPPERONI AND MASHROOM";
+        prize = 500;
+        flavour = "Plain OI' Cheese";
+        offer = false;
+        pizzaClass.setPizzaName(pizzaName);
+        pizzaClass.setFlavour(flavour);
+        pizzaClass.setOffer(offer);
+        pizzaClass.setPrize(prize);
+        return pizzaClass.toString();
+    }
+
 }
