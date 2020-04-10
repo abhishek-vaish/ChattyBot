@@ -9,5 +9,8 @@
 package plainOlCheese;
 
 public class PlainOlCheese {
-
+    String pizzaName;
+    int prize;
+    String flavour;
+    boolean offer;
 }
