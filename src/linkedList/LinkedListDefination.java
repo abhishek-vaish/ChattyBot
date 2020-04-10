@@ -43,11 +43,11 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
         }
     }
 
-
     @Override
     public void add(Pizza data) {
-
+        add(data, size);
     }
+
 
     @Override
     public boolean delete(int index) {
