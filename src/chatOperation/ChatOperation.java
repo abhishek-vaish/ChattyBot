@@ -26,8 +26,10 @@ public class ChatOperation<Pizza> implements ChatADT<Pizza> {
 
     @Override
     public void reorder(int index) {
-
+        linkedListDefination.display();
+        linkedListDefination.delete(index);
     }
+
 
     @Override
     public boolean payment(int pizzaPrice) {
