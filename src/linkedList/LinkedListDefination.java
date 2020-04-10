@@ -20,6 +20,13 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
         return response;
     }
 
+    private void addFirst(Pizza data) {
+        if (head == null) {
+            head = new Node(data, null);
+            size++;
+        }
+    }
+
     @Override
     public void add(Pizza data) {
 
