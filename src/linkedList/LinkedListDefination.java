@@ -25,4 +25,26 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
     public void display() {
 
     }
+
+    private class Node<Pizza> {
+        private Pizza data;
+        private Node<Pizza> next;
+
+        public Node(Pizza data, Node<Pizza> next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        private Node(Pizza data) {
+            this.data = data;
+        }
+
+        private Pizza getData() {
+            return data;
+        }
+
+        private Node<Pizza> getNext() {
+            return next;
+        }
+    }
 }
