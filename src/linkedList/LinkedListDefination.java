@@ -9,7 +9,8 @@
 package linkedList;
 
 public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
-
+    private int size = 0;
+    private Node<Pizza> head = null;
 
     @Override
     public void add(Pizza data) {
