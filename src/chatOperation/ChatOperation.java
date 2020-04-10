@@ -9,10 +9,11 @@
 package chatOperation;
 
 import linkedList.LinkedListDefination;
+import plainOlCheese.PlainOlCheese;
 
 public class ChatOperation<Pizza> implements ChatADT<Pizza> {
     LinkedListDefination<Pizza> linkedListDefination = new LinkedListDefination<>();
-
+    PlainOlCheese plainOlCheese = new PlainOlCheese();
     @Override
     public void order(int index) {
 
