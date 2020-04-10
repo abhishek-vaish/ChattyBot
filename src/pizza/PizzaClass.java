@@ -9,6 +9,10 @@
 package pizza;
 
 public class PizzaClass {
+    String pizzaName;
+    int prize;
+    String flavour;
+    boolean offer;
 
 
 }
