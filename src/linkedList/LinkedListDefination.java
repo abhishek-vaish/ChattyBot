@@ -12,6 +12,14 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
     private int size = 0;
     private Node<Pizza> head = null;
 
+    private Node<Pizza> getNode(int index) {
+        Node<Pizza> response = head;
+        for (int i = 0; i < index; i++) {
+            response = response.getNext();
+        }
+        return response;
+    }
+
     @Override
     public void add(Pizza data) {
 
