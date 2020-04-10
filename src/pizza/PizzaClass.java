@@ -23,4 +23,36 @@ public class PizzaClass {
 
     public PizzaClass() {
     }
+
+    public String getPizzaName() {
+        return pizzaName;
+    }
+
+    public void setPizzaName(String pizzaName) {
+        this.pizzaName = pizzaName;
+    }
+
+    public int getPrize() {
+        return prize;
+    }
+
+    public void setPrize(int prize) {
+        this.prize = prize;
+    }
+
+    public String getFlavour() {
+        return flavour;
+    }
+
+    public void setFlavour(String flavour) {
+        this.flavour = flavour;
+    }
+
+    public boolean isOffer() {
+        return offer;
+    }
+
+    public void setOffer(boolean offer) {
+        this.offer = offer;
+    }
 }
