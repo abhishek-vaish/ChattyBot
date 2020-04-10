@@ -14,9 +14,14 @@ import plainOlCheese.PlainOlCheese;
 public class ChatOperation<Pizza> implements ChatADT<Pizza> {
     LinkedListDefination<Pizza> linkedListDefination = new LinkedListDefination<>();
     PlainOlCheese plainOlCheese = new PlainOlCheese();
+
     @Override
     public void order(int index) {
-
+        if (index == 1)
+            linkedListDefination.add((Pizza) plainOlCheese.theBigPepperoni());
+        else if (index == 2)
+            linkedListDefination.add((Pizza) plainOlCheese.theBigPepperoniAndMashroom());
+        linkedListDefination.display();
     }
 
     @Override
