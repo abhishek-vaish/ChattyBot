@@ -8,7 +8,10 @@
 
 package chatOperation;
 
+import linkedList.LinkedListDefination;
+
 public class ChatOperation<Pizza> implements ChatADT<Pizza> {
+    LinkedListDefination<Pizza> linkedListDefination = new LinkedListDefination<>();
 
     @Override
     public void order(int index) {
