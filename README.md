@@ -7,8 +7,7 @@ The motivation behind this project is Hyperskills by Jetbrains.
 Woking and updraging my skills it motivate to create a project related to Online bot that will benefit the user and help them to order it without closing or going to any other app for ordering the pizza.
 
 # Build Status
-```
 - Still in working stage.
-```
+
 
 
