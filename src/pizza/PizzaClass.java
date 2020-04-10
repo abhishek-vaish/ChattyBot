@@ -21,6 +21,12 @@ public class PizzaClass {
         this.offer = offer;
     }
 
+    @Override
+    public String toString() {
+        return "Pizza Name=" + pizzaName + '\n' + "Prize=" + prize + "\n" + "Flavour='" + flavour + '\n' +
+                "Offer=" + offer;
+    }
+
     public PizzaClass() {
     }
 
@@ -55,4 +61,6 @@ public class PizzaClass {
     public void setOffer(boolean offer) {
         this.offer = offer;
     }
+
+
 }
