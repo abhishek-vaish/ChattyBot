@@ -27,6 +27,11 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
         }
     }
 
+    private void addAfter(Pizza data, Node<Pizza> node) {
+        node.next = new Node<>(data, node.next);
+        size++;
+    }
+
     @Override
     public void add(Pizza data) {
 
