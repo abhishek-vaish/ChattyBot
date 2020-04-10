@@ -9,5 +9,12 @@ Woking and updraging my skills it motivate to create a project related to Online
 # Build Status
 - Still in working stage.
 
+# Tech/Framework Used
+- Java
+- IntelliJ IDEA
+- Git
+- Github
+- Data Structure
+
 
 
