@@ -89,7 +89,10 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
 
     @Override
     public void display() {
-
+        for (int i = 0; i < size; i++) {
+            Pizza data = getNode(i).getData();
+            System.out.print(data);
+        }
     }
 
     private class Node<Pizza> {
