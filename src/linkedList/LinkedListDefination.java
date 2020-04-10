@@ -73,8 +73,19 @@ public class LinkedListDefination<Pizza> implements LinkedListADT<Pizza> {
 
     @Override
     public boolean delete(int index) {
-        return false;
+        boolean response = false;
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            deleteFirst();
+        } else {
+            Node<Pizza> temp = getNode(index);
+            deleteAfter(temp);
+            response = true;
+        }
+        return response;
     }
+
 
     @Override
     public void display() {
