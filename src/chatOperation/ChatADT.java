@@ -4,16 +4,12 @@ public interface ChatADT<Pizza> {
     /**
      * For order the pizza from the list
      *
-     * @param index choose the pizza number from the list and give it to order method as a parameter
+     * @param pizzaName            list of pizza order by the user
+     * @param quantity             number of pizza order by the user
+     * @param size                 size selected by the user (S,L,M)
+     * @param amountPayedByTheUser amount payed by the user
      */
-    void order(int index);
-
-    /**
-     * If the customer mood change and reorder the pizza and cancel the old one
-     *
-     * @param index choose the pizza number from the list and give it to order method as a parameter
-     */
-    void reorder(int index);
+    boolean order(String pizzaName, int quantity, char size, int amountPayedByTheUser);
 
     /**
      * For the Pizza payment if the given amount is equal to pizza prize then only the pizza is order
