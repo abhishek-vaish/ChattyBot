@@ -8,12 +8,23 @@
 
 package pizza;
 
-public class PizzaClass {
-    String pizzaList;
-    int quantity;
-    char size;
-    int payment;
+/**
+ * Pizza Class is for the structure and the variables use for the services provided by the chatBot
+ */
 
+public class PizzaClass {
+    String pizzaList; //list of pizza order by the user
+    int quantity;  //number of pizza order by the user
+    char size; // size selected by the user (S,L,M)
+    int payment;  //amount payed by the user
+
+    /**
+     * PizzaClass is a constructor
+     * @param pizzaList list of pizza order by the user
+     * @param quantity number of pizza order by the user
+     * @param size size selected by the user (S,L,M)
+     * @param payment amount payed by the user
+     * */
     public PizzaClass(String pizzaList, int quantity, char size, int payment) {
         this.pizzaList = pizzaList;
         this.quantity = quantity;
@@ -21,6 +32,9 @@ public class PizzaClass {
         this.payment = payment;
     }
 
+    /**
+     *Getter and Setter
+     * */
     public int getPayment() {
         return payment;
     }
