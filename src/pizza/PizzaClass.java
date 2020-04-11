@@ -9,58 +9,58 @@
 package pizza;
 
 public class PizzaClass {
-    String pizzaName;
-    int prize;
-    String flavour;
-    boolean offer;
+    String pizzaList;
+    int quantity;
+    char size;
+    int payment;
 
-    public PizzaClass(String pizzaName, int prize, String flavour, boolean offer) {
-        this.pizzaName = pizzaName;
-        this.prize = prize;
-        this.flavour = flavour;
-        this.offer = offer;
+    public PizzaClass(String pizzaList, int quantity, char size, int payment) {
+        this.pizzaList = pizzaList;
+        this.quantity = quantity;
+        this.size = size;
+        this.payment = payment;
     }
 
-    @Override
-    public String toString() {
-        return "Pizza Name=" + pizzaName + '\n' + "Prize=" + prize + "\n" + "Flavour='" + flavour + '\n' +
-                "Offer=" + offer;
+    public int getPayment() {
+        return payment;
+    }
+
+    public void setPayment(int payment) {
+        this.payment = payment;
     }
 
     public PizzaClass() {
     }
 
-    public String getPizzaName() {
-        return pizzaName;
+    @Override
+    public String toString() {
+        return "pizzaList=" + pizzaList +
+                "\nquantity=" + quantity +
+                "\nsize=" + size +
+                "\nPayment=" + payment;
     }
 
-    public void setPizzaName(String pizzaName) {
-        this.pizzaName = pizzaName;
+    public String getPizzaList() {
+        return pizzaList;
     }
 
-    public int getPrize() {
-        return prize;
+    public void setPizzaList(String pizzaList) {
+        this.pizzaList = pizzaList;
     }
 
-    public void setPrize(int prize) {
-        this.prize = prize;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public String getFlavour() {
-        return flavour;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public void setFlavour(String flavour) {
-        this.flavour = flavour;
+    public char getSize() {
+        return size;
     }
 
-    public boolean isOffer() {
-        return offer;
+    public void setSize(char size) {
+        this.size = size;
     }
-
-    public void setOffer(boolean offer) {
-        this.offer = offer;
-    }
-
-
 }
