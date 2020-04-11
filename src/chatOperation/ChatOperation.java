@@ -9,35 +9,28 @@
 package chatOperation;
 
 import linkedList.LinkedListDefination;
-import plainOlCheese.PlainOlCheese;
+import pizza.PizzaClass;
 
 public class ChatOperation<Pizza> implements ChatADT<Pizza> {
-    LinkedListDefination<Pizza> linkedListDefination = new LinkedListDefination<>();
-    PlainOlCheese plainOlCheese = new PlainOlCheese();
+    int amountPaidByTheCustomer = 400;
+    LinkedListDefination linkedListDefination = new LinkedListDefination();
 
     /**
      * For order the pizza from the list
      *
-     * @param index choose the pizza number from the list and give it to order method as a parameter
+     * @param pizzaName            list of pizza order by the user
+     * @param quantity             number of pizza order by the user
+     * @param size                 size selected by the user (S,L,M)
+     * @param amountPayedByTheUser amount payed by the user
      */
     @Override
-    public void order(int index) {
-        if (index == 1)           // If the user choose the first pizza than theBigPepperoni is selected
-            linkedListDefination.add((Pizza) plainOlCheese.theBigPepperoni());
-        else if (index == 2)           // If the user choose the first pizza than theBigPepperoniAndMashroom is selected
-            linkedListDefination.add((Pizza) plainOlCheese.theBigPepperoniAndMashroom());
-        linkedListDefination.display();
-    }
-
-    /**
-     * If the customer mood change and reorder the pizza and cancel the old one
-     *
-     * @param index choose the pizza number from the list and give it to order method as a parameter
-     */
-    @Override
-    public void reorder(int index) {
-        linkedListDefination.display(); //display the list of pizza that user have order
-        linkedListDefination.delete(index); //delete the oder that user doesn't want.
+    public boolean order(String pizzaName, int quantity, char size, int amountPayedByTheUser) {
+        if (payment(amountPaidByTheCustomer)) {
+            PizzaClass pizzaClass = new PizzaClass(pizzaName, quantity, size, amountPayedByTheUser);
+            linkedListDefination.add(pizzaClass);
+            linkedListDefination.display();
+        }
+        return true;
     }
 
     /**
@@ -47,6 +40,10 @@ public class ChatOperation<Pizza> implements ChatADT<Pizza> {
      */
     @Override
     public boolean payment(int pizzaPrice) {
-        return false;
+        boolean response = false;
+        if (pizzaPrice == amountPaidByTheCustomer) {
+            response = true;
+        }
+        return response;
     }
 }
