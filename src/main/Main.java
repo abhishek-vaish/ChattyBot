@@ -9,56 +9,68 @@
 package main;
 
 import chatOperation.ChatOperation;
-import pizza.PizzaClass;
-import plainOlCheese.PlainOlCheese;
+import linkedList.LinkedListDefination;
+import menuCard.MenuCard;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ChatOperation<PizzaClass> chatOperation = new ChatOperation<>();
-        String pizzaName;
-        int prize;
-        String flavour;
-        boolean offer;
+
         Scanner scanner = new Scanner(System.in);
+        LinkedListDefination linkedListDefination = new LinkedListDefination();
+        String message = scanner.next();
         while (true) {
             System.out.println("Welcome to PizzaBot.com");
-            System.out.println("1. Order Your Pizza.");
-            System.out.println("2. Reorder Your Pizza.");
-            System.out.println("3. Exit.");
+            System.out.println("Order Your Pizza.");
+            System.out.println("Menu Card");
+            System.out.println("Exit.");
             System.out.print("Please Enter your Choice : ");
-            int choice = scanner.nextInt();
-            if (choice == 1) {
-                System.out.println("Hey Pizza lover!!! Please select Flaour");
-                System.out.println("1. Plain Ol’ Cheese.\n" +
-                        "2. Pepperoni.\n" +
-                        "3. Double cheese pizza.\n");
-                System.out.print("Please select your flavour category : ");
-                int flavourCategory = scanner.nextInt();
-                switch (flavourCategory) {
-                    case 1:
-                        System.out.println("We have following pizza in your selected Flavour");
-                        PlainOlCheese plainOlCheese = new PlainOlCheese();
-                        System.out.println("\n" + "1. " + plainOlCheese.theBigPepperoni());
-                        System.out.println("======================================");
-                        System.out.println("2. " + plainOlCheese.theBigPepperoniAndMashroom());
-                        int pizzaChoose = scanner.nextInt();
-                        if (pizzaChoose == 1)
-                            chatOperation.order(1);
-                        else if (pizzaChoose == 2)
-                            chatOperation.order(2);
-                        else
-                            System.out.println("Please enter correct choice.");
+            String choice = scanner.next();
+            if (choice.compareTo("Order") == 0) {
+                instruction();
+                while (true) {
+                    System.out.print("Do you want to order more pizza ? (Yes/No)");
+                    String response = scanner.next();
+                    if (response.compareTo("Yes") == 0) {
+                        instruction();
+                        break;
+                    } else if (response.compareTo("No") == 0) {
+                        break;
+                    } else {
+                        System.out.println("Please insert correct input");
+                    }
                 }
-            } else if (choice == 2) {
-                System.out.println("Please Delete your ordered Pizza : ");
-                int index = scanner.nextInt();
-                chatOperation.reorder(index - 1);
-            } else {
+            } else if (choice.compareTo("Menu") == 0) {
+                MenuCard menuCard = new MenuCard();
+                menuCard.menuList();
+            } else if (choice.compareTo("Exit") == 0) {
                 break;
+            } else {
+                System.out.println("Please enter correct input");
             }
         }
+    }
 
+    private static void instruction() {
+        String pizzaName;
+        int quantity;
+        char size;
+        int amountPayedByTheUser;
+        Scanner scanner = new Scanner(System.in);
+        ChatOperation chatOperation = new ChatOperation();
+        System.out.println("Hey Pizza lover!!! What pizza do you want to order ?");
+        pizzaName = scanner.next();
+        System.out.print("Pizza Size : ");
+        size = scanner.next().charAt(0);
+        System.out.print("Quantity : ");
+        quantity = scanner.nextInt();
+        System.out.print("Payment : ");
+        amountPayedByTheUser = scanner.nextInt();
+        if (chatOperation.order(pizzaName, quantity, size, amountPayedByTheUser)) {
+            System.out.println("Your order is placed successfully.");
+        } else {
+            System.out.println("Some network issue make your order fail !!!");
+        }
     }
 }
