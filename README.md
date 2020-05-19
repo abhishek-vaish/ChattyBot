@@ -1,5 +1,5 @@
 # ChattyBot
-Chatty Bot is a Social media bot use to order, reorder and confirm the order by the paying the payment. 
+Chatty Bot is a Social media bot use to order, reorder and confirm the order by paying the payment. 
 It will help to order your delicious pizza by srolling your social life and with the one go.
 
 ## Motivation
